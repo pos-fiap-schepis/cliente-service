@@ -8,4 +8,6 @@ public interface ClienteRepositoryGateway {
     Cliente salvar(Cliente cliente);
 
     Optional<Cliente> getClienteByCpf(String cpf);
+
+    Optional<Cliente> getClienteById(Long id);
 }

@@ -5,6 +5,7 @@ import com.cliente.core.entities.Cliente;
 import com.cliente.core.exceptions.BusinessException;
 import com.cliente.core.gateways.ClienteRepositoryGateway;
 import com.cliente.core.gateways.ClienteServiceGateway;
+import com.cliente.infrastructure.exceptions.ViolacaoDominioExcecao;
 import java.util.Objects;
 
 public class ClienteUseCase implements ClienteServiceGateway {
@@ -18,6 +19,11 @@ public class ClienteUseCase implements ClienteServiceGateway {
     @Override
     public Cliente getClienteByCpf(String cpf) {
         return clienteRepositoryGateway.getClienteByCpf(cpf).orElseThrow(() -> new BusinessException("Cliente não encontrado"));
+    }
+
+    @Override
+    public Cliente getClienteById(Long id) {
+        return clienteRepositoryGateway.getClienteById(id).orElseThrow(() -> new ViolacaoDominioExcecao("Cliente não encontrado"));
     }
 
     @Override

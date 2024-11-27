@@ -7,5 +7,7 @@ public interface ClienteServiceGateway {
 
     Cliente getClienteByCpf(String cpf);
 
+    Cliente getClienteById(Long id);
+
     Cliente salvar(Cliente cliente);
 }

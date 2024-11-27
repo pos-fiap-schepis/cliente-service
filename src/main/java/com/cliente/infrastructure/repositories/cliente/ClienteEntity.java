@@ -20,8 +20,8 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "CLIENTE", schema = "FASTFOOD")
-@SequenceGenerator(name = "SQ_CLIENTE", sequenceName = "FASTFOOD.SQ_CLIENTE", allocationSize = 1, initialValue = 1)
+@Table(name = "CLIENTE", schema = "CLIENTE")
+@SequenceGenerator(name = "SQ_CLIENTE", sequenceName = "CLIENTE.SQ_CLIENTE", allocationSize = 1, initialValue = 1)
 public class ClienteEntity {
 
     @Id

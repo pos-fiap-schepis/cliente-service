@@ -30,4 +30,11 @@ public class ClienteRepositoryGatewayImpl implements ClienteRepositoryGateway {
 
     }
 
+    @Override
+    public Optional<Cliente> getClienteById(Long id) {
+        Optional<ClienteEntity> clienteEntity = clienteRepository.findById(id);
+
+        return clienteEntity.map(ClienteConverter::converterEntityToCliente);
+    }
+
 }

@@ -40,6 +40,17 @@ public class ClienteController {
         return ClientePresenter.converterClienteToDto(clienteServiceGateway.getClienteByCpf(cpf));
     }
 
+    @Operation(summary = "Retornar um cliente pelo CPF")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Cliente encontrado", content = {@Content(mediaType = "application/json",
+                    schema = @Schema(implementation = Cliente.class))}),
+            @ApiResponse(responseCode = "400", description = "Parâmetros inválidos", content = @Content),
+            @ApiResponse(responseCode = "412", description = "Cliente não encontrado", content = @Content)})
+    @GetMapping("/{id}/cliente")
+    public ClienteDto getClienteById(@PathVariable("id") Long id) {
+        return ClientePresenter.converterClienteToDto(clienteServiceGateway.getClienteById(id));
+    }
+
     @Operation(summary = "Salvar um novo cliente")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "Cliente cadastrado com sucesso", content = {@Content(mediaType = "application/json",
