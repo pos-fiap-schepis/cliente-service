@@ -1,0 +1,31 @@
+spring:
+  application:
+    name: cliente-service
+  datasource:
+    url: jdbc:postgresql://${RDS_HOSTNAME}:${RDS_PORT}/pedido?currentSchema=cliente
+    username: ${RDS_USERNAME}
+    password: ${RDS_PASSWORD}
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    database: Postgresql
+    show-sql: true
+    open-in-view: false
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+  flyway:
+    schemas: cliente
+    url: jdbc:postgresql://${RDS_HOSTNAME}:${RDS_PORT}/pedido?currentSchema=cliente
+    user: ${RDS_USERNAME}
+    password: ${RDS_PASSWORD}
+
+cors:
+  url: http://localhost:3000
+
+logging:
+  level:
+    root: INFO 
+
