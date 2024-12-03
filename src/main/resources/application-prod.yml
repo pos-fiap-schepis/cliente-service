@@ -2,7 +2,7 @@ spring:
   application:
     name: cliente-service
   datasource:
-    url: jdbc:postgresql://${RDS_HOSTNAME}:${RDS_PORT}/pedido?currentSchema=cliente
+    url: jdbc:postgresql://${RDS_HOSTNAME}:${RDS_PORT}/cliente?currentSchema=cliente
     username: ${RDS_USERNAME}
     password: ${RDS_PASSWORD}
     driver-class-name: org.postgresql.Driver
@@ -18,7 +18,7 @@ spring:
         dialect: org.hibernate.dialect.PostgreSQLDialect
   flyway:
     schemas: cliente
-    url: jdbc:postgresql://${RDS_HOSTNAME}:${RDS_PORT}/pedido?currentSchema=cliente
+    url: jdbc:postgresql://${RDS_HOSTNAME}:${RDS_PORT}/cliente?currentSchema=cliente
     user: ${RDS_USERNAME}
     password: ${RDS_PASSWORD}
 
